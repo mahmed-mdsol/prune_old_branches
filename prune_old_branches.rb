@@ -8,7 +8,7 @@ $options = {
     :specific_remotes => nil,
     :action => :list,
     :base => 'origin/develop',
-    :exclude_patterns => ['(^|\/)develop$', '(^|\/)master$'],
+    :exclude_patterns => ['(^|\/)develop$', '(^|\/)master$', '(^|\/)release$'],
     :include_patterns => []
 }
 OptionParser.new do |opts|
@@ -43,7 +43,7 @@ OptionParser.new do |opts|
   end
 
   opts.on("-e", "--exclude [PATTERN1[,PATTERN2]]", Array, "Exclude branches with a pattern from the list provided.",
-                                                          "  Defaults to (^|\/)develop$,(^|\/)master$.",
+                                                          "  Defaults to (^|\/)develop$,(^|\/)master$,(^|\/)release$.",
                                                           "  Use -e with no parameters to disable these exclusions.") do |list|
     $options[:exclude_patterns] = list || []
   end
