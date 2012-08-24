@@ -142,7 +142,7 @@ def delete_branch(branch)
 end
 
 def remotes
-  $remotes ||= `git remote`.map { |remote| remote.strip }
+  $remotes ||= `git remote`.split.map{ |remote| remote.strip }
 end
 
 def fetch
